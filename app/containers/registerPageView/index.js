@@ -29,7 +29,10 @@ componentDidMount() {
   componentWillUnmount() {
     BackAndroid.removeEventListener('NAVIGATION_BACK', this.onBackNavigation);
   }
-
+onLogin()
+{
+  this.props.navigator.replace({ key: 'Login',index:0});
+}
 
  
   render() {
@@ -53,6 +56,11 @@ componentDidMount() {
              <Button
                 style={styles.defaultButton}
               >Register</Button>
+
+              <View style={styles.signInWrapper}>  
+              <Text style={styles.smallLinkTextsRight}  onPress={()=>{this.onLogin()}}  >Already Registered? Login</Text>
+              
+           </View>
         </View> 
     </ScrollView>
 );

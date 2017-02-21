@@ -28,11 +28,14 @@ _reactNative.BackAndroid.addEventListener('NAVIGATION_BACK',this.onBackNavigatio
 }},{key:'componentWillUnmount',value:function componentWillUnmount()
 {
 _reactNative.BackAndroid.removeEventListener('NAVIGATION_BACK',this.onBackNavigation);
+}},{key:'onLogin',value:function onLogin()
+
+{
+this.props.navigator.replace({key:'Login',index:0});
 }},{key:'render',value:function render()
 
 
-
-{
+{var _this2=this;
 return(
 
 _react2.default.createElement(_reactNative.ScrollView,{style:{flex:1,backgroundColor:'#ffe0cc'}},
@@ -51,7 +54,12 @@ _react2.default.createElement(_reactNative.TextInput,{placeholder:'Password',sty
 
 
 _react2.default.createElement(_reactNativeButton2.default,{
-style:_styles2.default.defaultButton},'Register'))));
+style:_styles2.default.defaultButton},'Register'),
+
+
+_react2.default.createElement(_reactNative.View,{style:_styles2.default.signInWrapper},
+_react2.default.createElement(_reactNative.Text,{style:_styles2.default.smallLinkTextsRight,onPress:function onPress(){_this2.onLogin();}},'Already Registered? Login')))));
+
 
 
 
