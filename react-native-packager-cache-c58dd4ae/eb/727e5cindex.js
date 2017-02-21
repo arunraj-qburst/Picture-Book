@@ -26,7 +26,7 @@ this.props.navigator.push({key:'BooksTabs',index:2});
 
 {
 return(
-_react2.default.createElement(_reactNative.View,{style:{flex:1}},
+_react2.default.createElement(_reactNative.View,{style:{flex:1,backgroundColor:'#ffffff'}},
 _react2.default.createElement(_bookGridView2.default,{dataSource:api.result})));
 
 

@@ -26,7 +26,7 @@ class BookListingPageView extends Component {
 
   render() {
     return (
-      <View style={{flex:1}}>
+      <View style={{flex:1,backgroundColor:'#ffffff'}}>
         <GridViewLayout dataSource={api.result} />
       </View>
     );
