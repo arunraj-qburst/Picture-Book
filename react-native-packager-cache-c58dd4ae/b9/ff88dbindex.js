@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:true});var _query=require("./query.js");Object.defineProperty(exports,"MediaQueryDecorator",{enumerable:true,get:function get(){return babelHelpers.interopRequireDefault(_query).default;}});

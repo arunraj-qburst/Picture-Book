@@ -7,7 +7,8 @@ import {
   StyleSheet,
   Text,
   View,
- TextInput
+ TextInput,
+ ScrollView
 } from 'react-native';
 import styles from './styles';
 import Button from 'react-native-button';
@@ -34,7 +35,7 @@ componentDidMount() {
   render() {
     return (
 
-    <View style={{flex:1}}>
+    <ScrollView style={{flex:1, backgroundColor:'#ffe0cc',}}>
 
 
         <View style={styles.logoWrapper}>  
@@ -47,11 +48,13 @@ componentDidMount() {
            <TextInput placeholder="Last Name" style={styles.input} />
            <TextInput placeholder="Password" style={styles.input}/>
            <TextInput placeholder="Password" style={styles.input} />
+           
+           
              <Button
                 style={styles.defaultButton}
               >Register</Button>
         </View> 
-    </View>
+    </ScrollView>
 );
   }
 

@@ -16,11 +16,19 @@ import loginstyle from './styles';
 class LoginPageView extends Component { 
 
  onSignUp(){
-    this.props.gotoSignUpPage({ key: 'Signup',index:1});
+    //this.props.gotoSignUpPage({ key: 'Signup',index:1});
+       this.props.navigator.push({ key: 'Signup',index:1});
   }
   onLoginPress(){
      // this.setState({ key: 'BooksTabs',index:2});
-    this.props.onLogin({ key: 'BooksTabs',index:2});
+    //this.props.onLogin({ key: 'BooksTabs',index:2});
+    
+
+   // if (route.index === 0) {
+            this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
+        //  } else {
+        //   navigator.pop();
+        // }
   }
 
   render() {

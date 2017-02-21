@@ -16,11 +16,19 @@ var _styles=require('./styles');var _styles2=babelHelpers.interopRequireDefault(
 LoginPageView=function(_Component){babelHelpers.inherits(LoginPageView,_Component);function LoginPageView(){babelHelpers.classCallCheck(this,LoginPageView);return babelHelpers.possibleConstructorReturn(this,(LoginPageView.__proto__||Object.getPrototypeOf(LoginPageView)).apply(this,arguments));}babelHelpers.createClass(LoginPageView,[{key:'onSignUp',value:function onSignUp()
 
 {
-this.props.gotoSignUpPage({key:'Signup',index:1});
+
+this.props.navigator.push({key:'Signup',index:1});
 }},{key:'onLoginPress',value:function onLoginPress()
 {
 
-this.props.onLogin({key:'BooksTabs',index:2});
+
+
+
+
+this.props.navigator.push({key:'BooksTabs',index:2});
+
+
+
 }},{key:'render',value:function render()
 
 {var _this2=this;

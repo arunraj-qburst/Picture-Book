@@ -16,7 +16,7 @@ var _actions=require('../actions');
 
 var _loginPageView=require('./loginPageView');var _loginPageView2=babelHelpers.interopRequireDefault(_loginPageView);
 var _registerPageView=require('./registerPageView');var _registerPageView2=babelHelpers.interopRequireDefault(_registerPageView);
-var _BookList=require('./BookList');var _BookList2=babelHelpers.interopRequireDefault(_BookList);var
+var _bookListingPageView=require('./bookListingPageView');var _bookListingPageView2=babelHelpers.interopRequireDefault(_bookListingPageView);var
 
 NavigationPropTypes=_reactNative.NavigationExperimental.PropTypes,
 NavigationStateUtils=_reactNative.NavigationExperimental.StateUtils,
@@ -76,13 +76,38 @@ return(
 
 
 
-_react2.default.createElement(NavigationTransitioner,{
-navigationState:this.props.navigationState,
-render:this._renderScene}));
 
 
-}}]);return AppRoute;}(_react.Component);var _initialiseProps=function _initialiseProps(){var _this2=this;this._renderScene=function(props){var index=props.index,key=props.key,navigationState=props.navigationState;switch(props.scene.route.key){case'Login':return _react2.default.createElement(_loginPageView2.default,_this2.props);case'Signup':return _react2.default.createElement(_registerPageView2.default,_this2.props);case'BooksTabs':return _react2.default.createElement(_BookList2.default,_this2.props);}};};
 
+
+
+_react2.default.createElement(_reactNative.Navigator,{
+initialRoute:this.props.navigationState.routes[0],
+initialRouteStack:this.props.navigationState.routes,
+renderScene:this._renderScene}));
+
+
+}}]);return AppRoute;}(_react.Component);var _initialiseProps=function _initialiseProps(){var _this2=this;this._renderSceneXXX=function(props){var index=props.index,key=props.key,navigationState=props.navigationState;switch(props.scene.route.key){case'Login':return _react2.default.createElement(_loginPageView2.default,_this2.props);case'Signup':return _react2.default.createElement(_registerPageView2.default,_this2.props);case'BooksTabs':return _react2.default.createElement(_bookListingPageView2.default,_this2.props);}};this.
+
+
+_renderScene=function(route,navigator){
+
+
+
+
+
+
+
+
+switch(route.key){
+case'Login':
+return _react2.default.createElement(_loginPageView2.default,babelHelpers.extends({},route.props,{navigator:navigator}));
+case'Signup':
+return _react2.default.createElement(_registerPageView2.default,babelHelpers.extends({},route.props,{navigator:navigator}));
+case'BooksTabs':
+return _react2.default.createElement(_bookListingPageView2.default,babelHelpers.extends({},route.props,{navigator:navigator}));}
+
+};};
 
 
 

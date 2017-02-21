@@ -9,6 +9,7 @@ var _redux=require('redux');
 
 
 
+
 var _styles=require('./styles');var _styles2=babelHelpers.interopRequireDefault(_styles);
 var _reactNativeButton=require('react-native-button');var _reactNativeButton2=babelHelpers.interopRequireDefault(_reactNativeButton);var
 
@@ -34,7 +35,7 @@ _reactNative.BackAndroid.removeEventListener('NAVIGATION_BACK',this.onBackNaviga
 {
 return(
 
-_react2.default.createElement(_reactNative.View,{style:{flex:1}},
+_react2.default.createElement(_reactNative.ScrollView,{style:{flex:1,backgroundColor:'#ffe0cc'}},
 
 
 _react2.default.createElement(_reactNative.View,{style:_styles2.default.logoWrapper},
@@ -47,6 +48,8 @@ _react2.default.createElement(_reactNative.TextInput,{placeholder:'First Name',s
 _react2.default.createElement(_reactNative.TextInput,{placeholder:'Last Name',style:_styles2.default.input}),
 _react2.default.createElement(_reactNative.TextInput,{placeholder:'Password',style:_styles2.default.input}),
 _react2.default.createElement(_reactNative.TextInput,{placeholder:'Password',style:_styles2.default.input}),
+
+
 _react2.default.createElement(_reactNativeButton2.default,{
 style:_styles2.default.defaultButton},'Register'))));
 

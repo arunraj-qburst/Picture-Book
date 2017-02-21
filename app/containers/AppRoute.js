@@ -16,7 +16,7 @@ import {
   
 import LoginPageView from './loginPageView';
 import SignupPageView from './registerPageView';
-import BookList from './BookList';
+import BookListingPageView from './bookListingPageView';
 const {
   PropTypes: NavigationPropTypes,
   StateUtils: NavigationStateUtils,
@@ -39,7 +39,7 @@ class AppRoute extends Component {
     this._handleBackAction = this._handleBackAction.bind(this);
   }
   //////////////////
-_renderScene = (props) => {
+_renderSceneXXX = (props) => {
    
      const {
       index,
@@ -53,7 +53,7 @@ _renderScene = (props) => {
       case 'Signup':
         return <SignupPageView {...this.props} /> 
         case 'BooksTabs':
-        return <BookList {...this.props} /> 
+        return <BookListingPageView {...this.props} /> 
     }
   }
    _handleBackAction() {
@@ -63,7 +63,7 @@ _renderScene = (props) => {
     this.props.popRoute();
     return true;
   };
- 
+
    render() {
     const { navigationState } = this.props.navigationState
     let direction = 'horizontal'
@@ -75,15 +75,40 @@ _renderScene = (props) => {
         direction={direction}
         navigationState={this.props.navigationState}
         renderScene={this._renderScene}
-      />*/
+      />
        <NavigationTransitioner
         navigationState={this.props.navigationState}
         render={this._renderScene}
       />
+*/
+      <Navigator
+      initialRoute={this.props.navigationState.routes[0]}
+      initialRouteStack={this.props.navigationState.routes}
+      renderScene={this._renderScene}
+      />
     )
   }
  
-   
+    /////////////////////////////
+_renderScene =(route, navigator)  => {
+    /*
+    if (route.index === 0) {
+            navigator.push(route);//.routes[1]);
+          } else {
+           navigator.pop();
+         }*/
+    ///
+    //navigator.push(route);
+    switch( route.key) {
+      case 'Login':
+        return <LoginPageView   {...route.props} navigator={navigator}  />
+      case 'Signup':
+        return <SignupPageView  {...route.props} navigator={navigator} /> 
+        case 'BooksTabs':
+        return <BookListingPageView  {...route.props} navigator={navigator} /> 
+    }
+  }
+ /////////////////////////////
  
 }
  
