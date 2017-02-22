@@ -7,7 +7,8 @@ import { bindActionCreators } from 'redux'
 import {
   View,
   Text,
-  TextInput
+  TextInput,
+  ScrollView	
 } from 'react-native';
 
 import Button from 'react-native-button';
@@ -33,7 +34,7 @@ class LoginPageView extends Component {
 
   render() {
     return (
-      <View style={{flex:1}}>
+      <ScrollView style={{flex:1}}>
 
        <View style={loginstyle.logoWrapper}> 
         <Text style ={loginstyle.logo}>Picture Book</Text>
@@ -59,7 +60,7 @@ class LoginPageView extends Component {
 
         </View>
 
-      </View>
+      </ScrollView>
     );
   }
 }  

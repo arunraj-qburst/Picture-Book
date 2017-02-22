@@ -18,7 +18,8 @@ logo:{
 
  fontSize:40,
  textAlign:'center',
- paddingTop:80 
+ paddingTop:80,
+ paddingBottom:80 
 
 },
 
