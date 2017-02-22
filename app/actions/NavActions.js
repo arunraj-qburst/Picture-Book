@@ -1,7 +1,7 @@
 import * as types from './types'
 import ReactNative from 'react-native'
-const { NavigationExperimental } =  ReactNative
-const { jumpToIndex } = NavigationExperimental.StateUtils;
+//const { NavigationExperimental } =  ReactNative
+//const { jumpToIndex } = NavigationExperimental.StateUtils;
 /*
 export function setTab(tabIndex) {
   return (dispatch, getState) => {
@@ -12,16 +12,32 @@ export function setTab(tabIndex) {
 
 export function push(route) {
   return {
-    type: types.NAVIGATION_FORWARD,
-    payload: route,
+    type: types.NAVIGATION_PUSH,
+    route
   };
 }
 export function pop() {
   return {
-    type: types.NAVIGATION_BACK,
+    type: types.NAVIGATION_POP,
   };
 }
 
+// For Book detail gotoSignUpPage
+export function onBookDetail(route) {
+ 
+ route .bookData=
+ {title:"Book Title here",
+  author :"Hrishikesh",
+ price :"58"} 
+
+return (dispatch, getState) => {
+    dispatch({
+      type: types.NAVIGATION_PUSH,  
+       route
+    })
+  } }
+
+/*
 export function gotoPreviousScreen(action) {
  
   return (dispatch, getState) => {
@@ -40,13 +56,7 @@ export function gotoSignUpPage(action) {
     })
   }
 }
-/*
-export function onLogin(action) {
-  return {type: types.SHOW_ALL_BOOKS,  
-      action }
-}*/
-
-
+ 
 
 export function onLogin(action) {
   return (dispatch, getState) => { 
@@ -55,5 +65,5 @@ export function onLogin(action) {
        action
     })
   }
-}
+}*/
  

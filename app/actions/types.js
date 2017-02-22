@@ -19,4 +19,6 @@ export const SHOW_MY_LIBRARY = 'SHOW_MY_LIBRARY'
 // Navigation
 //export const SET_TAB = 'SET_TAB'
 export const NAVIGATION_FORWARD = 'NAVIGATION_FORWARD'
+export const NAVIGATION_PUSH = 'NAVIGATION_PUSH'
+export const NAVIGATION_POP = 'NAVIGATION_POP'
 export const NAVIGATION_BACK = 'NAVIGATION_BACK'

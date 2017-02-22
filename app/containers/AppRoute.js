@@ -17,6 +17,8 @@ import {
 import LoginPageView from './loginPageView';
 import SignupPageView from './registerPageView';
 import BookListingPageView from './bookListingPageView';
+import BookDetailVeiw from './bookDetailPageView';
+
 const {
   PropTypes: NavigationPropTypes,
   StateUtils: NavigationStateUtils,
@@ -31,13 +33,13 @@ const {
 
  
 class AppRoute extends Component {
- 
+ /*
   constructor(props){//: any, context: any) {// 
     super(props);//, context);
     //this.state=this.props.navigationState; 
     this._renderScene = this._renderScene.bind(this); 
     this._handleBackAction = this._handleBackAction.bind(this);
-  }
+  }*/
   //////////////////
 _renderSceneXXX = (props) => {
    
@@ -49,11 +51,11 @@ _renderSceneXXX = (props) => {
     
     switch(props.scene.route.key) {
       case 'Login':
-        return <LoginPageView  {...this.props}  />
+        return <LoginPageView  />
       case 'Signup':
-        return <SignupPageView {...this.props} /> 
+        return <SignupPageView /> 
         case 'BooksTabs':
-        return <BookListingPageView {...this.props} /> 
+        return <BookListingPageView   /> 
     }
   }
    _handleBackAction() {
@@ -71,26 +73,28 @@ _renderSceneXXX = (props) => {
       direction = 'vertical'
     } */
     return (
-     /* <NavigationCardStack
+      <NavigationCardStack
         direction={direction}
         navigationState={this.props.navigationState}
         renderScene={this._renderScene}
       />
-       <NavigationTransitioner
+      /* <NavigationTransitioner
         navigationState={this.props.navigationState}
         render={this._renderScene}
       />
 */
+/*
       <Navigator
       initialRoute={this.props.navigationState.routes[0]}
       initialRouteStack={this.props.navigationState.routes}
       renderScene={this._renderScene}
-      />
+      />*/
     )
   }
  
     /////////////////////////////
-_renderScene =(route, navigator)  => {
+//_renderScene =(route, navigator)  => { // if Navigator
+  _renderScene =(props)  => { // if NavigationCardStack
     /*
     if (route.index === 0) {
             navigator.push(route);//.routes[1]);
@@ -99,13 +103,18 @@ _renderScene =(route, navigator)  => {
          }*/
     ///
     //navigator.push(route);
-    switch( route.key) {
+    console.log('##########  route.key  '+ props.scene.route.key)
+    switch( props.scene.route.key) {
       case 'Login':
-        return <LoginPageView   {...route.props} navigator={navigator}  />
+        return <LoginPageView  />
       case 'Signup':
-        return <SignupPageView  {...route.props} navigator={navigator} /> 
+        return <SignupPageView  /> 
         case 'BooksTabs':
-        return <BookListingPageView  {...route.props} navigator={navigator} /> 
+        return <BookListingPageView   /> 
+        case 'BookDetail':
+        return <BookDetailVeiw   /> 
+
+        
     }
   }
  /////////////////////////////

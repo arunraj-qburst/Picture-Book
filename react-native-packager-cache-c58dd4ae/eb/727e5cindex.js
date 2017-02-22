@@ -17,11 +17,11 @@ var api=require('../../data/books.json');var
 BookListingPageView=function(_Component){babelHelpers.inherits(BookListingPageView,_Component);function BookListingPageView(){babelHelpers.classCallCheck(this,BookListingPageView);return babelHelpers.possibleConstructorReturn(this,(BookListingPageView.__proto__||Object.getPrototypeOf(BookListingPageView)).apply(this,arguments));}babelHelpers.createClass(BookListingPageView,[{key:'onSignUp',value:function onSignUp()
 
 {
-this.props.gotoSignUpPage({key:'Signup',index:1});
+this.props.gotoSignUpPage({key:'Signup'});
 }},{key:'onLoginPress',value:function onLoginPress()
 
 {
-this.props.navigator.push({key:'BooksTabs',index:2});
+this.props.navigator.push({key:'BooksTabs'});
 }},{key:'render',value:function render()
 
 {
@@ -31,6 +31,8 @@ _react2.default.createElement(_bookGridView2.default,{dataSource:api.result})));
 
 
 }}]);return BookListingPageView;}(_react.Component);
+
+
 
 function mapDispatchToProps(dispatch){
 return(0,_redux.bindActionCreators)(_actions.ActionCreators,dispatch);

@@ -16,52 +16,41 @@ const initialNavState = {
   index: 0,
   key: 'Login',
   routes: [
-    { key: 'Login',index:0  },
-      { key: 'Signup',index:1 } 
-       ,
-     { key: 'BooksTabs',index:2 }  
+    { key: 'Login'  }  
   ]
 }
 
 
 export const navigationState = createReducer(initialNavState, 
   {
-  [types.NAVIGATION_FORWARD](state, action) {
-    //if (state.routes[state.index].key === (action.key)) return state;
-      return NavigationStateUtils.forward(state, action ) 
-  },
-
-  [types.SHOW_USER_SIGNUP](state, action) {
-   // return NavigationStateUtils.back(state);
-   //if (state.routes[state.index].key === (action.key)) return state;
-     return NavigationStateUtils.forward(state, action ) 
-  } ,
-
-  [types.NAVIGATION_BACK](state, action) {
+  [types.NAVIGATION_PUSH](state, action) { 
+     const {newState} = Object.assign({},state, action.route);
+     console.log('newState-----------------')
+     console.log(newState)
+      console.log('newState-----------state.index------'+state.index)
+     console.log('newState-----------------')
+     if (state.routes[state.index].key === (action.route && action.route.key)) return state;
+    // ensure no duplicate keys
+    const index = state.routes.findIndex((route) => {
+        return action.route.key === route.key  ;
+    });
+    if (index > -1) {
+        const clonedState = Object.assign({}, state);
+        clonedState.routes.splice(index, 1);
+        return NavigationStateUtils.push(clonedState, action.route);
+    }
+    // normal case for a push
+    return NavigationStateUtils.push(state,    action.route);
  
+        
+  }, 
+
+  [types.NAVIGATION_POP](state, action) { 
     return NavigationStateUtils.pop(state);
     // return NavigationStateUtils.pop(state);
-  } ,
-
-  [types.SHOW_ALL_BOOKS](state, action) {
-    console.log("SHOW_ALL_BOOKS "+action.key)
-    
-//if (state.routes[state.index].key === (action.key )) return state;
-     return NavigationStateUtils.forward( {...state,action}, action ) 
-    // return NavigationStateUtils.pop(state);
-  }   
+  }  
   
 });
-
 
  
-
-
-export const navigationParams = createReducer({ }, {
-  [types.NAVIGATION_FORWARD](state, action) {
-    return action.state;
-  },
-
-  
-
-});
+ 

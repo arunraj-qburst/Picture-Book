@@ -17,11 +17,11 @@ const api = require('../../data/books.json')
 class BookListingPageView extends Component { 
 
  onSignUp(){
-    this.props.gotoSignUpPage({ key: 'Signup',index:1});
+    this.props.gotoSignUpPage({ key: 'Signup' });
   }
 
   onLoginPress(){
-    this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);  
+    this.props.navigator.push({ key: 'BooksTabs' });//.routes[1]);  
   }
 
   render() {
@@ -32,6 +32,8 @@ class BookListingPageView extends Component {
     );
   }
 }  
+
+// Redux part //
  function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
 }

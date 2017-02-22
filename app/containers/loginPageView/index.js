@@ -17,15 +17,15 @@ class LoginPageView extends Component {
 
  onSignUp(){
     //this.props.gotoSignUpPage({ key: 'Signup',index:1});
-       this.props.navigator.push({ key: 'Signup',index:1});
+       this.props.push({ key: 'Signup' });
   }
   onLoginPress(){
      // this.setState({ key: 'BooksTabs',index:2});
-    //this.props.onLogin({ key: 'BooksTabs',index:2});
+    this.props.push({ key: 'BooksTabs' });
     
 
    // if (route.index === 0) {
-            this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
+         ///   this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
         //  } else {
         //   navigator.pop();
         // }

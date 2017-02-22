@@ -20,7 +20,8 @@ constructor(props)
   super(props)
 }
  onBackNavigation(){
-   this. props.gotoPreviousScreen({ key: 'Login',index:0});
+   //this. props.gotoPreviousScreen({ key: 'Login',index:0});
+   this.props.push({ key: 'BooksTabs',index:2});
     
   }
 componentDidMount() {
@@ -31,7 +32,8 @@ componentDidMount() {
   }
 onLogin()
 {
-  this.props.navigator.replace({ key: 'Login',index:0});
+  //this.props.navigator.replace({ key: 'Login',index:0});
+   this.props.push({ key: 'Login',index:0});
 }
 
  

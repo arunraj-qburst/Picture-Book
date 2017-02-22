@@ -17,15 +17,15 @@ LoginPageView=function(_Component){babelHelpers.inherits(LoginPageView,_Componen
 
 {
 
-this.props.navigator.push({key:'Signup',index:1});
+this.props.push({key:'Signup'});
 }},{key:'onLoginPress',value:function onLoginPress()
 {
 
+this.props.push({key:'BooksTabs'});
 
 
 
 
-this.props.navigator.push({key:'BooksTabs',index:2});
 
 
 

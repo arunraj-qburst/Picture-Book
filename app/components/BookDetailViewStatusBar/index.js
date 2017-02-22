@@ -11,7 +11,7 @@ import Button from 'react-native-button';
 const styles = require('./styles.js');
 const { string, number, bool} = PropTypes;
 
-export default class PBDetailViewStatusBar extends Component {
+export default class BookDetailViewStatusBar extends Component {
   render() {
     const { title,
             author,
@@ -37,11 +37,11 @@ export default class PBDetailViewStatusBar extends Component {
     return(
       <View>
         <Image
-          source={require('../../../sample1.png')}
+          source={require('../../images/sample1.png')}
           style={styles.coverImage}
         />
         <Image
-          source={require('../../../noddy.jpg')}
+          source={require('../../images/noddy.jpg')}
           style={styles.titleImage}
         />
         <View style={styles.titleBar}>
@@ -55,7 +55,7 @@ export default class PBDetailViewStatusBar extends Component {
   }
 }
 
-PBDetailViewStatusBar.propTypes = {
+BookDetailViewStatusBar.propTypes = {
   title: string,
   author: string,
   titleImageUrl: string,

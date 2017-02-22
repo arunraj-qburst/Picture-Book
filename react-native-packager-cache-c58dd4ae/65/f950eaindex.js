@@ -20,7 +20,8 @@ function SignUpPageView(props)
 props));
 }babelHelpers.createClass(SignUpPageView,[{key:'onBackNavigation',value:function onBackNavigation()
 {
-this.props.gotoPreviousScreen({key:'Login',index:0});
+
+this.props.push({key:'BooksTabs',index:2});
 
 }},{key:'componentDidMount',value:function componentDidMount()
 {
@@ -31,7 +32,8 @@ _reactNative.BackAndroid.removeEventListener('NAVIGATION_BACK',this.onBackNaviga
 }},{key:'onLogin',value:function onLogin()
 
 {
-this.props.navigator.replace({key:'Login',index:0});
+
+this.props.push({key:'Login',index:0});
 }},{key:'render',value:function render()
 
 

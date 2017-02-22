@@ -1,7 +1,13 @@
 'use strict';
 
+ 
+import { connect } from 'react-redux';
+import ReactNative from 'react-native';
+import { ActionCreators } from '../../actions'
+import { bindActionCreators } from 'redux'
+
 import React, { Component, PropTypes } from 'react';
-import PBDetailViewStatusBar from '../../components/DetailViewStatusBar'
+import BookDetailViewStatusBar from '../../components/BookDetailViewStatusBar'
 import {
   StyleSheet,
   ScrollView,
@@ -12,19 +18,21 @@ import {
 const styles = require('./styles.js');
 const { string, number, oneOf, bool } = PropTypes;
 
-export default class PBDetailView extends Component {
+class BookDetailVeiw extends Component {
+ 
   render() {
+     console.log('this.props.bookData'+this.props.navigationState);
     const {
       title,
       author,
       coverImageUrl,
       titleImageUrl,
       price
-    } = this.props;
+    } = this.props.bookData;
 
     return (
       <ScrollView>
-        <PBDetailViewStatusBar
+        <BookDetailViewStatusBar
           title={title}
           author={author}
           coverImageUrl={coverImageUrl}
@@ -55,7 +63,7 @@ export default class PBDetailView extends Component {
   }
 }
 
-PBDetailView.propTypes = {
+BookDetailVeiw.propTypes = {
   title: string,
   author: string,
   coverImageUrl: string,
@@ -63,3 +71,16 @@ PBDetailView.propTypes = {
   price: number,
   purchased: bool
 };
+
+// Redux part //
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ActionCreators, dispatch);
+}
+ 
+function mapStateToProps(state) {
+  return { 
+     navigationState: state.navigationState, 
+  };
+} 
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookDetailVeiw); 
