@@ -8,25 +8,29 @@ import {
   View,
   Text,
   TextInput,
-  ScrollView
+  ScrollView,
+  KeyboardAvoidingView,
+  Image	
 } from 'react-native';
 
 import Button from 'react-native-button';
-import loginstyle from './styles';
+import styles from './styles';
+import LoginFormView from '../../components/loginFormView/index.ios';
+import logo from '../../images/BookIconOrange.png';
 
 class LoginPageView extends Component { 
 
  onSignUp(){
     //this.props.gotoSignUpPage({ key: 'Signup',index:1});
-       this.props.push({ key: 'Signup' });
+       this.props.navigator.push({ key: 'Signup',index:1});
   }
   onLoginPress(){
      // this.setState({ key: 'BooksTabs',index:2});
-    this.props.push({ key: 'BooksTabs' });
+    //this.props.onLogin({ key: 'BooksTabs',index:2});
     
 
    // if (route.index === 0) {
-         ///   this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
+            this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
         //  } else {
         //   navigator.pop();
         // }
@@ -34,31 +38,20 @@ class LoginPageView extends Component {
 
   render() {
     return (
-      <ScrollView>
 
-       <View> 
-        <Text style ={loginstyle.logo}>Picture Book</Text>
-       </View>
-{/*       
-       <View style ={loginstyle.bodyWrapper}>  
-              <TextInput style={loginstyle.formFieldsIos}
-                placeholder="username io"
-              />
-               <TextInput placeholder="password"/>
-              <Button 
-                onPress={()=>{this.onLoginPress()}} 
-                style={loginstyle.defaultButton}
-              >Login</Button>
-           
+      <KeyboardAvoidingView style = {styles.container} behavior="padding">
+         
+          <View style={styles.logoContainer}>
+              <Image source={logo} style={styles.logoImage}/>
+              <Text style= {styles.logo} >Picture Logo</Text>
+          </View>
 
-           <View style={loginstyle.signUpWrapper}> 
-              <Text style={loginstyle.register}  onPress={()=>{this.onSignUp()}}  >Register</Text>
-              <Text style={loginstyle.forgotPassword}>Forgot Password</Text>
-           </View> 
+          <View style = {styles.inputContainer}>
+              <LoginFormView/>
+          </View>  
+    </KeyboardAvoidingView>  
 
-        </View>*/}
-
-      </ScrollView>
+         
     );
   }
 }  

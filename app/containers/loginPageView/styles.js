@@ -2,73 +2,39 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 var loginstyle = StyleSheet.create ({
+ 
+container:{
+
+backgroundColor: '#ffe0cc',
+flex:1
+},
+
+logoContainer:{
+flexGrow:1,
+alignItems:'center',
+justifyContent:'center'
+},
+
+logoImage:{
+
+width:100,
+height:100
+
+},
+
+logo:{
+
+fontSize:40,
+fontWeight:'400',
+color:'rgba(255,117,26,0.8)'
+},
+
+inputContainer:{
+
+}
 
 
-  container: {
-    flexDirection:'column',
-    flex:1
-  },
-
-  logoWrapper:{
-   flex:2,
-   backgroundColor:'#ffc299'
-  },
-
-  logo:{
-
-   fontSize:40,
-   textAlign:'center',
-   paddingTop:80 
-
-  },
-
-  bodyWrapper:{
-
- flex:3,
-  backgroundColor:'#ffe0cc',
-  paddingRight:40,
-  paddingLeft:40,
-
-  },
-
-  signUpWrapper:{
-    flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-  },
-
-
-  formFields: {
-    color: '#000',
-    borderColor: '#ff694d',
-    marginBottom: 30,
-    flex:0.6
-  },
-  defaultText: {
-    color: 'red',
-    fontSize: 24
-  },
-  defaultButton: {
-    color: '#fff',
-    backgroundColor: '#ff694d',
-    marginTop:40,
-    padding:10
-  },
-  register: {
-      flex:0.5,
-      paddingTop:50,
-      textAlign:'left',
-      paddingBottom:20
-  },
-
-  forgotPassword:{
-
-    flex:0.5,
-    paddingTop:50,
-    textAlign:'right',
-    paddingBottom:20
-  }
-
+ 
 
 });
 
