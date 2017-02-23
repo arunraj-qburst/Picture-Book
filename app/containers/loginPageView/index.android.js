@@ -8,11 +8,15 @@ import {
   View,
   Text,
   TextInput,
-  ScrollView	
+  ScrollView,
+  KeyboardAvoidingView,
+  Image 
 } from 'react-native';
 
 import Button from 'react-native-button';
-import loginstyle from './styles';
+import styles from './styles';
+import LoginFormView from '../../components/loginFormView/index.ios';
+import logo from '../../images/BookIconOrange.png';
 
 class LoginPageView extends Component { 
 
@@ -34,33 +38,20 @@ class LoginPageView extends Component {
 
   render() {
     return (
-      <ScrollView style={{flex:1}}>
 
-       <View style={loginstyle.logoWrapper}> 
-        <Text style ={loginstyle.logo}>Picture Book</Text>
-       </View>
-       
-       <View style ={loginstyle.bodyWrapper}> 
+      <KeyboardAvoidingView style = {styles.container} behavior="padding">
+         
+          <View style={styles.logoContainer}>
+              <Image source={logo} style={styles.logoImage}/>
+              <Text style= {styles.logo} >Picture Logo</Text>
+          </View>
 
-           <View  > 
-              <TextInput
-                placeholder="username"
-              />
-               <TextInput placeholder="password"/>
-              <Button 
-                onPress={()=>{this.onLoginPress()}} 
-                style={loginstyle.defaultButton}
-              >Login</Button>
-          </View> 
+          <View style = {styles.inputContainer}>
+              <LoginFormView/>
+          </View>  
+    </KeyboardAvoidingView>  
 
-           <View style={loginstyle.signUpWrapper}> 
-              <Text style={loginstyle.register}  onPress={()=>{this.onSignUp()}}  >Register</Text>
-              <Text style={loginstyle.forgotPassword}>Forgot Password</Text>
-           </View> 
-
-        </View>
-
-      </ScrollView>
+         
     );
   }
 }  

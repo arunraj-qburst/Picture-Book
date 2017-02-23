@@ -18,7 +18,7 @@ import reducer from './app/reducers'
 import AppRoute from './app/containers/AppRoute'
 import ChildLock from './app/containers/childLockPageView/index'
 import UserProfile from './app/containers/userProfilePageView/index'
-import LoginPage from './app/containers/loginPageView/index'
+import LoginPage from './app/containers/loginPageView'
 
 
 //import Orientation from 'react-native-orientation'
@@ -40,7 +40,7 @@ const store = configureStore({});
 //console.log('Orientation.getInitialOrientation()' +Orientation.getInitialOrientation());
 const App = () => (
   <Provider store={store}>
-    <ChildLock/>
+    <LoginPage/>
   </Provider>
 ) 
  
