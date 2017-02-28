@@ -1,13 +1,13 @@
 /**
- * 
+ *
  * Picture Book E-Reader App
- * Copy-right QBurst@2017 
+ * Copy-right QBurst@2017
  * Created : 15 Feb 2017
  * Auther : Arunrajs
- * 
+ *
  */
 import React from 'react'
-import { AppRegistry } from 'react-native'  
+import { AppRegistry } from 'react-native'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
@@ -16,9 +16,10 @@ import reducer from './app/reducers'
 //import AppContainer from './app/containers/AppContainer'
 //import AppNavigator from './app/containers/AppNavigator'
 import AppRoute from './app/containers/AppRoute'
-import ChildLock from './app/containers/childLockPageView/index'
 import UserProfile from './app/containers/userProfilePageView/index'
 import LoginPage from './app/containers/loginPageView'
+import UserProfileEditPageView from './app/containers/userProfileEditPageView'
+
 
 
 //import Orientation from 'react-native-orientation'
@@ -40,9 +41,8 @@ const store = configureStore({});
 //console.log('Orientation.getInitialOrientation()' +Orientation.getInitialOrientation());
 const App = () => (
   <Provider store={store}>
-    <LoginPage/>
+    <UserProfileEditPageView/>
   </Provider>
-) 
- 
+)
+
  AppRegistry.registerComponent('reader', () => App);
-  

@@ -4,7 +4,7 @@ import {
   Text,
   View,
   TouchableOpacity
-  
+
 } from 'react-native';
 
 import styles from './styles';
@@ -23,11 +23,11 @@ export default class UserDetails extends Component {
 
       <View style={styles.mainDetailContainer}>
 
-        
+
               <View style={styles.detailContainer}>
                 <Text style={styles.details,styles.detailsCaption}>First Name</Text>
                 <Text style={styles.details}>Anoop</Text>
-              </View>  
+              </View>
               <View style={styles.detailContainer}>
                 <Text style={styles.children,styles.detailsCaption}>LastName</Text>
                 <Text style={styles.details}>Anil</Text>
@@ -42,16 +42,16 @@ export default class UserDetails extends Component {
 
       <View style={styles.mainButtonContainer}>
               <Text>Change Password</Text>
-             <TouchableOpacity style={styles.button}>      
+             <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonTxt} >Register</Text>
             </TouchableOpacity>
-      </View>  
+      </View>
 
 
 
 </View>
-        
-    
+
+
 
     );
   }

@@ -20,7 +20,8 @@ color:'rgba(65,26,0,1)'
 },
 detailContainer:{
 marginTop:10,
-alignItems:'flex-start'
+alignItems:'flex-start',
+paddingHorizontal:10
 
 },
 
@@ -69,6 +70,3 @@ fontSize:20
 
 });
 export default userDetailsStyles;
-
-
-

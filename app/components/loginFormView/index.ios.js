@@ -8,37 +8,85 @@ import {
   Text,
   TextInput,
   ScrollView,
-  TouchableOpacity	
+  TouchableOpacity
 } from 'react-native';
+import { emailValidation,emptyValidation,passwordValidation } from '../../helper/helperFunctionsValidate';
 
 import styles from './styles'
 
 export default class LoginFormView extends Component {
 
 
-constructor(props) {
-    super(props);
-    this.state = {
+  constructor(props) {
+   super(props);
+   this.state = {
+     flag:true,
+     emailValue:"",
+     passwordValue:"",
+     emailText:"",
+     passwordText:""
 
-        inputValue:''
+   };
+   this.loginValidate = this.loginValidate.bind(this);
 
-    };
   }
 
 
-render(){
+loginValidate(){
+if(emptyValidation(this.state.emailValue)){
 
+    if(emailValidation(this.state.emailValue)){
+      this.setState({ emailText:"" });
+    }
+    else{
+      this.setState({emailText:"Invalid user email"})
+    }
+
+}
+
+else {
+  this.setState({emailText:"Invalid user email"});
+}
+//.............................................................
+
+if(emptyValidation(this.state.passwordValue)){
+
+    if(passwordValidation(this.state.passwordValue)){
+      this.setState({ passwordText:"" });
+    }
+    else{
+      this.setState({passwordText:"Invalid password"})
+    }
+
+}
+
+else {
+  this.setState({passwordText:"Invalid password"});
+}
+
+}
+
+
+render(){
     return(
 
         <View style= {styles.container}>
 
-            <TextInput style={styles.input} placeholder="username or email" placeholderTextColor="rgba(149,139,132,1)" returnKeyType="next" onSubmitEditing={ (text)=>{this.setState({inputValue:text }) } }/>
-            <TextInput style={styles.input} placeholder="password"  placeholderTextColor="rgba(149,139,132,1)" returnKeyType="go" secureTextEntry/>
-            <TouchableOpacity style={styles.button}>      
+            <TextInput style={styles.input} keyboardType="email-address"
+            placeholder="username or email" placeholderTextColor="rgba(149,139,132,1)"
+            returnKeyType="next" onChangeText = {(text)=>{this.setState({emailValue:text})  }}/>
+            <Text>{this.state.emailText}</Text>
+            <TextInput style={styles.input} placeholder="password"
+            placeholderTextColor="rgba(149,139,132,1)"
+            returnKeyType="go" secureTextEntry onChangeText={(text)=>{this.setState({passwordValue:text}) }}/>
+            <Text>{this.state.passwordText}</Text>
+
+            <TouchableOpacity style={styles.button} onPress={ ()=>{ this.loginValidate()} }>
                     <Text style={styles.buttonTxt} >Login</Text>
             </TouchableOpacity>
-            
-        </View>    
+
+
+        </View>
 
 
     );
@@ -50,4 +98,4 @@ render(){
 
 
 
-}    
+}

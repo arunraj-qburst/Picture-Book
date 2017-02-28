@@ -64,9 +64,8 @@ export default class UserProfile extends Component {
 
     <View style={style.container}>
           <UserDetails/>
-    </View>      
+    </View>
 
     );
   }
 }
-

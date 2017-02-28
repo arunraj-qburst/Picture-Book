@@ -29,18 +29,33 @@ render(){
 
     <View style= {styles.container} >
 
-    <View>
-      <TextInput style={styles.input} placeholder="Enter your first name"  placeholderTextColor="rgba(149,139,132,1)" onChangeText={(text) => this.setState({emailtext:text})} />
-      <TextInput style={styles.input} placeholder="Enter your last name" placeholderTextColor="rgba(149,139,132,1)" onChangeText={(text) => this.setState({PhoneNotext:text})} />
-      <TouchableOpacity style={styles.button}>      
-          <Text style={styles.buttonTxt} >Save</Text>
-      </TouchableOpacity>      
-    </View>  
+    <View style={styles.mainDetailContainer}>
+
+        <View style ={styles.detailContainer}>
+          <Text style={styles.children,styles.detailsCaption}>Enter your firstName</Text>
+          <TextInput style={styles.input} placeholder="Enter your first name"   onChangeText={(text) => this.setState({emailtext:text})} />
+        </View>
+
+        <View style={styles.detailContainer}>
+          <Text style={styles.children,styles.detailsCaption}>Enter your last name</Text>
+          <TextInput style={styles.input} placeholder="Enter your last name"  onChangeText={(text) => this.setState({PhoneNotext:text})} />
+        </View>
+
+
+  </View>
+
+  <View style={styles.mainButtonContainer}>
+
+    <Text>Change Password</Text>
+    <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonTxt} >Save</Text>
+    </TouchableOpacity>
+  </View>
 
 
 
     </View>
  );
-  
+
   }
 }
