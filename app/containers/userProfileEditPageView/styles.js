@@ -1,12 +1,10 @@
 import React from 'react'; 
 import {StyleSheet} from 'react-native'; 
-const userProfileStyles = StyleSheet.create({
+const userProfileEditStyles = StyleSheet.create({
 
 container:{
 backgroundColor: '#ffe0cc',
-flexGrow:1,
-justifyContent:'center'
-
+flex:1
 }
 
 });
@@ -14,4 +12,4 @@ justifyContent:'center'
 
      
 
-export default userProfileStyles
+export default userProfileEditStyles

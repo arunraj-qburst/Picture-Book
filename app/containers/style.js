@@ -1,26 +1,24 @@
-import { StyleSheet } from 'react-native';
+import React from 'react';
+import {StyleSheet} from 'react-native'; 
 
-export default StyleSheet.create({
-	tabContent: {
-		flex: 1,
-		alignItems: 'center',
-		paddingTop: 60
-	}
-	,
-	 container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+var GlobalStyles = StyleSheet.create ({
+ 
+appContainer:{
+padding:30,
+flex:1,
+justifyContent:'space-between'
+},
+
+textInput:{
+height:40,
+marginBottom:20,
+paddingHorizontal:20,
+backgroundColor:'rgba(255,117,26,0.1)',
+color:'rgba(65,26,0,.3)'
+
+}  
+ 
+
 });
+
+export default GlobalStyles;

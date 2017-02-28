@@ -16,18 +16,28 @@ import styles from './styles'
 export default class LoginFormView extends Component {
 
 
+constructor(props) {
+    super(props);
+    this.state = {
+
+        inputValue:''
+
+    };
+  }
+
+
 render(){
 
     return(
 
-        <View style= {styles.container} >
+        <View style= {styles.container}>
 
-            <TextInput style={styles.input} placeholder="username or email" placeholderTextColor="rgba(149,139,132,1)" returnKeyType="next"/>
+            <TextInput style={styles.input} placeholder="username or email" placeholderTextColor="rgba(149,139,132,1)" returnKeyType="next" onSubmitEditing={ (text)=>{this.setState({inputValue:text }) } }/>
             <TextInput style={styles.input} placeholder="password"  placeholderTextColor="rgba(149,139,132,1)" returnKeyType="go" secureTextEntry/>
             <TouchableOpacity style={styles.button}>      
                     <Text style={styles.buttonTxt} >Login</Text>
-            </TouchableOpacity>    
-
+            </TouchableOpacity>
+            
         </View>    
 
 
