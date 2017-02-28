@@ -1,0 +1,15 @@
+{
+  "error": 0,
+  "message": "success",
+  "result":   
+    { 
+      "userId": "123456" ,
+      "fullName": "Arun Raj" ,
+      "firstName": "Arun" ,
+      "lastName": "Raj" ,
+      "email": "arunrajs@qburst.com" ,
+      "accesTocken": "dfgdfg98679dsy89s",
+      "message": "Successfully logged in",
+      "isLoggedIn": true
+    }       
+}

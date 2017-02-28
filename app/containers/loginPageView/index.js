@@ -14,15 +14,16 @@ import Button from 'react-native-button';
 import loginstyle from './styles';
 
 class LoginPageView extends Component { 
-
+ 
  onSignUp(){
     //this.props.gotoSignUpPage({ key: 'Signup',index:1});
        this.props.push({ key: 'Signup' });
   }
   onLoginPress(){
      // this.setState({ key: 'BooksTabs',index:2});
-    this.props.push({ key: 'BooksTabs' });
-    
+    //this.props.push({ key: 'BooksTabs' });
+     
+    this.props.onLogin({ email: 'arunrajs@qburst.com',password:'123' });
 
    // if (route.index === 0) {
          ///   this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
@@ -42,10 +43,11 @@ class LoginPageView extends Component {
        <View style ={loginstyle.bodyWrapper}> 
 
            <View  > 
-              <TextInput
+              <TextInput  style={{height: 40, borderColor: 'gray', borderWidth: 1}}
                 placeholder="username"
               />
-               <TextInput placeholder="password"/>
+               <TextInput  style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                placeholder="password"/>
               <Button 
                 onPress={()=>{this.onLoginPress()}} 
                 style={loginstyle.defaultButton}

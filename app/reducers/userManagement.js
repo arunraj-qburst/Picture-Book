@@ -12,21 +12,36 @@ const {
  
 
 const initialState = {
-  index: 0,
-  key: 'Login',
-  routes: [
-    { key: 'Login'  },
-      { key: 'Signup' }  ,
-     { key: 'BooksTabs' } 
-  ]
+       isLoading:false,
+       
+       userData:{
+        userId: null ,
+        fullName: null,
+        firstName:  null ,
+        lastName:  null,
+        email:  null ,
+        accesTocken:  null,
+        message: 'invalid user',
+        isLoggedIn: false
+      }
 }
 
 
- export const userAccount = createReducer(initialState, 
+  
+export const userData = createReducer(initialState, 
   {
+  [types.NAVIGATION_PUSH](state, action) { 
+     const {newState} = Object.assign({},state, action.route);
+     
+      return newState;
+ 
+        
+  }, 
+
+  [types.ON_LOGIN_SUCCESS](state, action) { 
    
+      return newState;
+  }  
   
 });
-
-
 
