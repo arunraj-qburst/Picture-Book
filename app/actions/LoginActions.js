@@ -11,11 +11,8 @@ export function onLogin(route){
 
     //////
     return (dispatch, getState) => { 
-    const params = [
-      `i=${encodeURIComponent(route)}`,
-      'p=1'
-    ].join('&')
-    return Api.post(`/users/login?${params}`).then(resp => {  
+    const params = route;
+    return Api.post(`/users/login?${params}`,route).then(resp => {  
       if(resp.error==0  ){
          console.log("on   login success API@2",resp)
          dispatch( onLoginSuccess(resp.result));
