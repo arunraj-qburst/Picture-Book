@@ -5,21 +5,33 @@ export function onLogin(route){
     /*return{
         type:types.ON_LOGIN,
         route
-    }*/
-
-    
-
+    }*/ /*
+ return (dispatch, getState) => { 
+   let data={};
+data.
+userData={
+        userId: null ,
+        fullName: null,
+        firstName:  null ,
+        lastName:  null,
+        email:  null ,
+        accesTocken:  null,
+        message:  "Failed to login",
+        isLoggedIn: false
+      }
+     dispatch( onLoginSuccess(data));
+ }*/
     //////
     return (dispatch, getState) => { 
     const params = route;
     return Api.post(`/users/login?${params}`,route).then(resp => {  
       if(resp.error==0  ){
          console.log("on   login success API@2",resp)
-         dispatch( onLoginSuccess(resp.result));
+         dispatch( onLoginSuccess({userData:resp.result}));
 
       }
       else{
-         
+        
          dispatch( onLoginFail( {
         userId: null ,
         fullName: null,
@@ -29,12 +41,14 @@ export function onLogin(route){
         accesTocken:  null,
         message: resp.message,
         isLoggedIn: false
-      }));
+      })); 
+ 
       } 
     }).catch( (ex) => {
         
           console.log("on api error @ login")
-          onLoginFail( {
+        
+        onLoginFail( {
         userId: null ,
         fullName: null,
         firstName:  null ,
@@ -43,7 +57,7 @@ export function onLogin(route){
         accesTocken:  null,
         message: "invalid user",
         isLoggedIn: false
-      });
+      }); 
       console.log(ex);
     });
   }

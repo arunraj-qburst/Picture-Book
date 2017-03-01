@@ -42,4 +42,4 @@ class Api {
     }).then( json => json );
   }
 }
-export default Api
+export default Api 

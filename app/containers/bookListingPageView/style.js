@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
+import appStyle from '../appStyle';
 
-export default StyleSheet.create({
+
+let blpv = StyleSheet.create({
+
+
 	tabContent: {
 		flex: 1,
 		alignItems: 'center',
@@ -24,3 +28,5 @@ export default StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export default { ...appStyle, ...blpv};

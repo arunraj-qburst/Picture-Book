@@ -9,7 +9,7 @@ import {
   Text,
   TextInput
 } from 'react-native';
- 
+import style from './style'; 
 import GridViewLayout from '../../components/bookGridView';
 
 const api = require('../../data/books.json')

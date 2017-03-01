@@ -14,7 +14,7 @@ const {
 const initialState = {
        isLoading:false,
        
-       userData:{
+        userData:{
         userId: null ,
         fullName: null,
         firstName:  null ,
@@ -39,9 +39,9 @@ export const userData = createReducer(initialState,
   }, 
 
   [types.ON_LOGIN_SUCCESS](state, action) { 
-   
+    console.log('@Reducer ^^^^^ ON_LOGIN_SUCCESS', action) 
+      const {newState} = Object.assign({},state, {action}, isLoading = false   ); 
       return newState;
   }  
   
 });
-
