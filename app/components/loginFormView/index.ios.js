@@ -75,16 +75,17 @@ render(){
             <TextInput style={styles.input} keyboardType="email-address"
             placeholder="username or email" placeholderTextColor="rgba(149,139,132,1)"
             returnKeyType="next" onChangeText = {(text)=>{this.setState({emailValue:text})  }}/>
-            <Text>{this.state.emailText}</Text>
+          
             <TextInput style={styles.input} placeholder="password"
             placeholderTextColor="rgba(149,139,132,1)"
             returnKeyType="go" secureTextEntry onChangeText={(text)=>{this.setState({passwordValue:text}) }}/>
-            <Text>{this.state.passwordText}</Text>
+
 
             <TouchableOpacity style={styles.button} onPress={ ()=>{ this.loginValidate()} }>
                     <Text style={styles.buttonTxt} >Login</Text>
             </TouchableOpacity>
 
+            <Text>{this.state.emailText} {this.state.passwordText}</Text>
 
         </View>
 

@@ -1,79 +1,119 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-const userProfileInputrStyles = StyleSheet.create({
+import { MediaQueryStyleSheet } from "react-native-responsive";
+import {
+fontColor,
+formColor,
+smallLabelColor
+} from '../../styles/variables';
+import globalStyles from '../../styles/styles';
+
+const userProfileInputrStyles = MediaQueryStyleSheet.create({
 
 container:{
-padding:30,
-flex:1
+  flex:1,
+  paddingTop:40,
+  justifyContent:'center',
+  marginLeft:20,
+  marginRight:20
 },
 
-input:{
-height:40,
-marginBottom:20,
-paddingHorizontal:0,
-color:'rgba(65,26,0,1)'
-
+// *overriding globalStyle input
+UserProfileInput:{
+  backgroundColor:formColor,
+  paddingHorizontal:0
 },
 
-
-button:{
-backgroundColor:'rgba(255,117,26,0.3)',
-paddingVertical:10,
-paddingHorizontal:25,
-marginTop:15
-},
-
-
-buttonTxt:{
-color:'rgba(255,117,26,0.8)',
-textAlign:'center',
-fontWeight:'700',
-fontSize:20
-},
-//..........................................................
 mainDetailContainer:{
-backgroundColor:'rgba(249, 237, 227,1)',
-marginLeft:20,
-marginRight:20,
-paddingLeft:8,
-paddingRight:8,
-paddingBottom:20,
-paddingTop:20
+  backgroundColor:formColor,
+  paddingBottom:20,
+  paddingTop:20,
+  paddingHorizontal:10
 
 },
 
-detailContainer:{
-marginTop:10,
-alignItems:'flex-start'
-},
 detailsCaption:{
-fontWeight:'bold',
-color:'rgba(149,139,132,1)',
-fontSize:14,
-fontWeight:'700'
+  fontWeight:'bold',
+  color:smallLabelColor,
+  fontSize:14,
+  fontWeight:'700'
 },
 details:{
-marginTop:5,
-marginBottom:5,
-fontSize:20,
-color:'rgba(65,26,0,1)'
+  marginTop:5,
+  marginBottom:5,
+  fontSize:20,
+  color:fontColor
 },
 mainButtonContainer:{
-backgroundColor:'rgba(249, 237, 227,1)',
-marginLeft:20,
-marginRight:20,
-paddingLeft:8,
-paddingRight:8,
-marginTop:20,
-height:120,
-paddingTop:10,
-paddingBottom:10,
-justifyContent:'center'
+  backgroundColor:formColor,
+  marginTop:20,
+  paddingTop:10,
+  paddingBottom:10,
+  justifyContent:'center',
+  paddingHorizontal:10
+
+},
+buttonRegister:{
+  marginTop:15
+}
+
+},
+
+//.................Media Query........................
+{
+
+//.........................Ipad Air 1,2
+
+"@media (min-device-width: 320) and (max-device-height: 480)":{
+detailsCaption:{
+fontSize:10
+},
+details:{
+  fontSize:12
+
+},
+
+changePassWord:{
+  fontSize:10
 
 }
 
 
 
-});
+},
 
-export default  userProfileInputrStyles;
+//....................Ipad Pro...............
+
+"@media (min-device-width: 375) and (max-device-height: 677)":{
+  detailsCaption:{
+  fontSize:8
+  },
+  details:{
+    fontSize:9
+
+  },
+
+  changePassWord:{
+    fontSize:8
+
+  },
+  buttonRegister:{
+    marginTop:10
+  }
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+);
+
+export default {...userProfileInputrStyles,...globalStyles};

@@ -1,57 +1,71 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import * as GlobalStyles from '../../styles'
+import { MediaQueryStyleSheet } from "react-native-responsive";
+import globalStyles from '../../styles/styles';
+import { buttonColor } from '../../styles/variables';
 
-var signUpFormStyle = StyleSheet.create ({
- 
+var signUpFormStyle = MediaQueryStyleSheet.create ({
+
+
 container:{
 padding:30,
 flex:1,
-justifyContent:'space-between'
-},
-
-input:{
-height:40,
-marginBottom:20,
-paddingHorizontal:20,
-backgroundColor:'rgba(255,117,26,0.1)',
-color:'rgba(65,26,0,1)'
-
-},
-
-
-button:{
-backgroundColor:'rgba(255,117,26,0.3)',
-paddingVertical:15
-},
-
-
-buttonTxt:{
-color:'rgba(255,117,26,0.8)',
-textAlign:'center',
-fontWeight:'700',
-fontSize:20
+justifyContent:'center'
 },
 buttonLogin:{
 paddingVertical:7,
-backgroundColor:'rgba(255,117,26,0.3)',
-marginTop:5
-
+backgroundColor:buttonColor,
+marginTop:5,
+borderRadius: 30
 },
 loginContainer:{
-marginTop:5,
-paddingLeft:50,
-paddingRight:50
+paddingLeft:100,
+paddingRight:100
 },
 loginText:{
- textAlign:'center'
+ textAlign:'center',
+ marginTop:20
+},
+Register:{
+marginTop:10
+}
+
+},
+//.................. Media Query............................
+
+{
+//..................Ipad Air 1,2 Media Query........................
+  "@media (min-device-width: 320) and (max-device-height: 480)":{
+
+    loginText:{
+      marginTop:10,
+      fontSize:8
+    }
+
+
+},
+
+  //................ Ipad pro Media Query....................................
+    "@media (min-device-width: 375) and (max-device-height: 677)":{
+      inputContainer:{
+        paddingLeft:40,
+        paddingRight:40
+      },
+
+      loginText:{
+        marginTop:10,
+        fontSize:8
+      },
+      inputValidationText:{
+        fontSize:7,
+        margin:4
+
+      }
+
+    }
+
 }
 
 
- 
+);
 
-});
-
-signUpFormStyle =  { ...signUpFormStyle,GlobalStyles} 
-
-export default signUpFormStyle ;
+export default {...signUpFormStyle,...globalStyles} ;

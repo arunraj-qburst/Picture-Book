@@ -1,9 +1,12 @@
-import React from 'react'; 
-import {StyleSheet} from 'react-native'; 
+import React from 'react';
+import {StyleSheet} from 'react-native';
+import {backGroundColor} from '../../styles/variables';
+
+
 const userProfileStyles = StyleSheet.create({
 
 container:{
-backgroundColor: '#ffe0cc',
+backgroundColor: backGroundColor ,
 flexGrow:1,
 justifyContent:'center'
 
@@ -12,6 +15,6 @@ justifyContent:'center'
 });
 
 
-     
+
 
 export default userProfileStyles

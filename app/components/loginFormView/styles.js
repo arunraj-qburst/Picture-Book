@@ -1,37 +1,37 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import { MediaQueryStyleSheet } from "react-native-responsive";
+import globalStyles from '../../styles/styles';
 
-var loginFormStyle = StyleSheet.create ({
- 
+var loginFormStyle = MediaQueryStyleSheet.create ({
+
 container:{
-padding:30
-},
-
-input:{
-height:40,
-marginBottom:20,
-paddingHorizontal:20,
-backgroundColor:'rgba(255,117,26,0.1)',
-color:'rgba(65,26,0,1)'
-
-},
-
-button:{
-backgroundColor:'rgba(255,117,26,0.3)',
-paddingVertical:15
-},
-
-
-buttonTxt:{
-color:'rgba(255,117,26,0.8)',
-textAlign:'center',
-fontWeight:'700',
-fontSize:20
+paddingLeft:60,
+paddingRight:60
 }
 
 
- 
+},
+//...............Ipad Air 1,2 ... .........................
+{
 
-});
+  "@media (min-device-width: 320) and (max-device-height: 480)":{
 
-export default loginFormStyle;
+  },
+  //....................Ipad Pro...............................
+  "@media (min-device-width: 375) and (max-device-height: 677)":{
+
+      container:{
+        paddingLeft:90,
+        paddingRight:90
+
+      }
+
+  }
+
+
+}
+
+
+);
+
+export default {...loginFormStyle,...globalStyles};

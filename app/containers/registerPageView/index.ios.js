@@ -10,7 +10,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Image,
-  TouchableOpacity	
+  TouchableOpacity
 } from 'react-native';
 
 import Button from 'react-native-button';
@@ -32,15 +32,12 @@ onLogin()
   this.props.navigator.replace({ key: 'Login',index:0});
 }
 
- 
+
   render() {
     return (
 <KeyboardAvoidingView style = {styles.container} behavior="padding">
-
-    <SignUpView/>
-
-
-</KeyboardAvoidingView>  
+      <SignUpView/>
+</KeyboardAvoidingView>
 
 
 );
@@ -52,11 +49,11 @@ onLogin()
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
 }
- 
-function mapStateToProps(state) {
-  return { 
-     navigationState: state.navigationState, 
-  };
-} 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpPageView); 
+function mapStateToProps(state) {
+  return {
+     navigationState: state.navigationState,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPageView);

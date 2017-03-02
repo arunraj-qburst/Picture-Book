@@ -10,7 +10,7 @@ import {
   TextInput,
   ScrollView,
   KeyboardAvoidingView,
-  Image	
+  Image
 } from 'react-native';
 
 import Button from 'react-native-button';
@@ -18,7 +18,7 @@ import styles from './styles';
 import LoginFormView from '../../components/loginFormView/index.ios';
 import logo from '../../images/BookIconOrange.png';
 
-class LoginPageView extends Component { 
+class LoginPageView extends Component {
 
  onSignUp(){
     //this.props.gotoSignUpPage({ key: 'Signup',index:1});
@@ -27,7 +27,7 @@ class LoginPageView extends Component {
   onLoginPress(){
      // this.setState({ key: 'BooksTabs',index:2});
     //this.props.onLogin({ key: 'BooksTabs',index:2});
-    
+
 
    // if (route.index === 0) {
             this.props.navigator.push({ key: 'BooksTabs',index:2});//.routes[1]);
@@ -40,7 +40,7 @@ class LoginPageView extends Component {
     return (
 
       <KeyboardAvoidingView style = {styles.container} behavior="padding">
-         
+
           <View style={styles.logoContainer}>
               <Image source={logo} style={styles.logoImage}/>
               <Text style= {styles.logo} >Picture Logo</Text>
@@ -48,21 +48,21 @@ class LoginPageView extends Component {
 
           <View style = {styles.inputContainer}>
               <LoginFormView/>
-          </View>  
-    </KeyboardAvoidingView>  
+          </View>
+    </KeyboardAvoidingView>
 
-         
+
     );
   }
-}  
+}
  function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
 }
- 
-function mapStateToProps(state) {
-  return { 
-     navigationState: state.navigationState, 
-  };
-} 
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPageView); 
+function mapStateToProps(state) {
+  return {
+     navigationState: state.navigationState,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPageView);

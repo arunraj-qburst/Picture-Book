@@ -15,10 +15,11 @@ import createLogger from 'redux-logger'
 import reducer from './app/reducers'
 //import AppContainer from './app/containers/AppContainer'
 //import AppNavigator from './app/containers/AppNavigator'
-import AppRoute from './app/containers/AppRoute'
+// import AppRoute from './app/containers/AppRoute'
 import UserProfile from './app/containers/userProfilePageView/index'
 import LoginPage from './app/containers/loginPageView'
 import UserProfileEditPageView from './app/containers/userProfileEditPageView'
+import RegisterPageView from './app/containers/registerPageView'
 
 
 
@@ -26,6 +27,7 @@ import UserProfileEditPageView from './app/containers/userProfileEditPageView'
 
 // middleware that logs actions
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__  });
+
 
 function configureStore(initialState) {
   const enhancer = compose(
@@ -40,6 +42,7 @@ function configureStore(initialState) {
 const store = configureStore({});
 //console.log('Orientation.getInitialOrientation()' +Orientation.getInitialOrientation());
 const App = () => (
+
   <Provider store={store}>
     <UserProfileEditPageView/>
   </Provider>

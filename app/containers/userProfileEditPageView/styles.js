@@ -1,5 +1,5 @@
 import React from 'react'; 
-import {StyleSheet} from 'react-native'; 
+import {StyleSheet} from 'react-native';
 const userProfileEditStyles = StyleSheet.create({
 
 container:{
@@ -10,6 +10,6 @@ flex:1
 });
 
 
-     
+
 
 export default userProfileEditStyles

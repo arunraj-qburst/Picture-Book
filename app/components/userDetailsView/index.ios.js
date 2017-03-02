@@ -41,8 +41,8 @@ export default class UserDetails extends Component {
 
 
       <View style={styles.mainButtonContainer}>
-              <Text>Change Password</Text>
-             <TouchableOpacity style={styles.button}>
+              <Text style={styles.changePassWord}>Change Password</Text>
+             <TouchableOpacity style={[styles.button,styles.buttonRegister]}>
                     <Text style={styles.buttonTxt} >Register</Text>
             </TouchableOpacity>
       </View>
