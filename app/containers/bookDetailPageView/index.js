@@ -15,7 +15,7 @@ import {
   Text
 } from 'react-native';
 
-const styles = require('./styles.js');
+const styles = require('./styles');
 const { string, number, oneOf, bool } = PropTypes;
 
 class BookDetailVeiw extends Component {

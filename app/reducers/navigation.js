@@ -14,9 +14,9 @@ const {
 
 const initialNavState = {
   index: 0,
-  key: 'Login',
+  key: 'Signup',
   routes: [
-    { key: 'Login'  }  
+    { key: 'Signup'  }  
   ]
 }
 
